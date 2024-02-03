@@ -1,0 +1,7 @@
+@mixin burgerBtn() {
+    position: absolute;
+    right: 0;
+    height: 3px;
+    content: '';
+    transition: width .3s;
+}

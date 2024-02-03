@@ -1,20 +1,67 @@
-@use './colors';
-@use './components';
-@use './mixins';
+@use "./colors" as *;
+@use "./components" as *;
+@use "./mixins" as *;
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
+
 html {
 	background-color: #333;
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 	// font-family: "Dancing Script", cursive;
-
 }
+
 body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 1.6rem;
+}
+
+// NAVIGATION
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 100;
+	&:focus {
+		outline: none;
+		border: 1px solid rgba(255, 255, 255, 0.5);
+		border-radius: 8px;
+	}
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+	&__bars {
+		width: 100%;
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+		&::before {
+			top: 26px;
+			width: 30%;
+		}
+	}
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include burgerBtn;
+		background-color: $pure-white;
+	}
+	&:hover &__bars::after {
+		width: 100%;
+	}
+	&:hover &__bars::before {
+		width: 100%;}
 }
