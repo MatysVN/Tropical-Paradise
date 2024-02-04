@@ -1,6 +1,19 @@
 @use "./colors" as *;
 @use "./components" as *;
-@use "./mixins" as *;
+
+@mixin burgerBtn() {
+	position: absolute;
+	right: 0;
+	height: 3px;
+	content: "";
+	transition: width 0.3s;
+}
+@mixin heroImages($bgImg) {
+	background-image: $blue-gradient, url($bgImg);
+	background-size: cover;
+	background-position: center;
+	// background-attachment: fixed;
+}
 
 *,
 *::before,
@@ -14,7 +27,6 @@ html {
 	background-color: #333;
 	font-size: 62.5%;
 	scroll-behavior: smooth;
-	// font-family: "Dancing Script", cursive;
 }
 
 body {
@@ -63,5 +75,89 @@ body {
 		width: 100%;
 	}
 	&:hover &__bars::before {
-		width: 100%;}
+		width: 100%;
+	}
+}
+
+// HEADER
+.header {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	padding: 2em;
+	height: 75vh;
+	text-align: center;
+	color: $pure-white;
+	@include heroImages("../img/palm-3172367_640.jpg");
+	background-attachment: scroll;
+
+	&__title {
+		font-family: "Dancing Script", cursive;
+		font-size: 4rem;
+		font-weight: 300;
+	}
+	&__text {
+		font-size: 1.3rem;
+	}
+	&__btn {
+		margin-top: 1.5em;
+		padding: 0.8em 1.6em;
+		font-size: 1rem;
+		background-color: $pure-white;
+		border: none;
+		border-radius: 8px;
+		color: $dark;
+		text-decoration: none;
+		text-transform: uppercase;
+		cursor: pointer;
+		font-weight: bold;
+		&::before {
+			background-color: $light-white;
+		}
+	}
+}
+
+// MEDIA QUERIES
+
+@media (min-width: 374px) {
+	.header {
+		&__title {
+			font-size: 5rem;
+		}
+		&__text {
+			font-size: 1.6rem;
+		}
+		&__btn {
+			margin-top: 2em;
+			padding: 0.8em 1.6em;
+			font-size: 1.4rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.header {
+		background-image:$blue-gradient, url('../img/palm-3172367_1920.jpg');
+
+		&__title {
+			font-size: 8rem;
+		}
+		&__text {
+			padding:0 70px;
+			font-size: 2.5rem;
+		}
+	}
+	.white-block {
+		height: 30px;
+		width: 45%;
+	}
+}
+
+@media (min-width:992px) {
+	.burger-btn {
+		top: 40px;
+		right: 40px;
+	}
 }
