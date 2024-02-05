@@ -35,47 +35,96 @@ body {
 }
 
 // NAVIGATION
-.burger-btn {
-	position: fixed;
-	top: 20px;
-	right: 20px;
-	padding: 1em;
-	background: none;
-	border: 1px solid transparent;
-	cursor: pointer;
-	z-index: 100;
-	&:focus {
-		outline: none;
-		border: 1px solid rgba(255, 255, 255, 0.5);
-		border-radius: 8px;
+
+.nav {
+	.burger-btn {
+		position: fixed;
+		top: 20px;
+		right: 20px;
+		padding: 1em;
+		background: none;
+		border: 1px solid transparent;
+		cursor: pointer;
+		z-index: 100;
+		&:focus {
+			outline: none;
+			border: 1px solid rgba(255, 255, 255, 0.5);
+			border-radius: 8px;
+		}
+		&__box {
+			position: relative;
+			width: 40px;
+			height: 30px;
+		}
+		&__bars {
+			width: 100%;
+			&::after {
+				top: 13px;
+				width: 60%;
+			}
+			&::before {
+				top: 26px;
+				width: 30%;
+			}
+		}
+		&__bars,
+		&__bars::after,
+		&__bars::before {
+			@include burgerBtn;
+			background-color: $pure-white;
+		}
+		&:hover &__bars::after {
+			width: 100%;
+		}
+		&:hover &__bars::before {
+			width: 100%;
+		}
 	}
-	&__box {
+
+	&__items {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: fixed;
+		flex-direction: column;
+		top: 0;
+		height: 100vh;
+		width: 100%;
+		background-image: $blue-gradient-solid;
+		transform: translateX(100%);
+		transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0);
+		}
+	}
+	&__item {
 		position: relative;
-		width: 40px;
-		height: 30px;
-	}
-	&__bars {
-		width: 100%;
-		&::after {
-			top: 13px;
-			width: 60%;
-		}
+		display: block;
+		margin: 0.5em 0;
+		padding: 0.5em 2em;
+		font-size: 2.8rem;
+		color: $pure-white;
+		text-decoration: none;
+
 		&::before {
-			top: 26px;
-			width: 30%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: "";
+			width: 3px;
+			height: 100%;
+			background-color: $pure-white;
+			transform: scaleY(0);
+			transition: transform 0.3s;
 		}
-	}
-	&__bars,
-	&__bars::after,
-	&__bars::before {
-		@include burgerBtn;
-		background-color: $pure-white;
-	}
-	&:hover &__bars::after {
-		width: 100%;
-	}
-	&:hover &__bars::before {
-		width: 100%;
+		&:hover::before {
+			transform: scaleY(1);
+		}
+		&--animation {
+			animation: navItemAnimation 1s both;
+		}
 	}
 }
 
@@ -119,6 +168,16 @@ body {
 	}
 }
 
+// ANIMATIONS
+@keyframes navItemAnimation {
+	from {
+		transform: translateX(200%);
+	}
+	to {
+		transform: translateX(0%);
+	}
+}
+
 // MEDIA QUERIES
 
 @media (min-width: 374px) {
@@ -139,13 +198,13 @@ body {
 
 @media (min-width: 768px) {
 	.header {
-		background-image:$blue-gradient, url('../img/palm-3172367_1920.jpg');
+		background-image: $blue-gradient, url("../img/palm-3172367_1920.jpg");
 
 		&__title {
 			font-size: 8rem;
 		}
 		&__text {
-			padding:0 70px;
+			padding: 0 70px;
 			font-size: 2.5rem;
 		}
 	}
@@ -155,7 +214,7 @@ body {
 	}
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
 	.burger-btn {
 		top: 40px;
 		right: 40px;

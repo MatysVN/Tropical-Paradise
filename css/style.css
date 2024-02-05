@@ -64,7 +64,7 @@ body {
   font-size: 1.6rem;
 }
 
-.burger-btn {
+.nav .burger-btn {
   position: fixed;
   top: 20px;
   right: 20px;
@@ -74,28 +74,28 @@ body {
   cursor: pointer;
   z-index: 100;
 }
-.burger-btn:focus {
+.nav .burger-btn:focus {
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 8px;
 }
-.burger-btn__box {
+.nav .burger-btn__box {
   position: relative;
   width: 40px;
   height: 30px;
 }
-.burger-btn__bars {
+.nav .burger-btn__bars {
   width: 100%;
 }
-.burger-btn__bars::after {
+.nav .burger-btn__bars::after {
   top: 13px;
   width: 60%;
 }
-.burger-btn__bars::before {
+.nav .burger-btn__bars::before {
   top: 26px;
   width: 30%;
 }
-.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
+.nav .burger-btn__bars, .nav .burger-btn__bars::after, .nav .burger-btn__bars::before {
   position: absolute;
   right: 0;
   height: 3px;
@@ -103,11 +103,54 @@ body {
   transition: width 0.3s;
   background-color: #fff;
 }
-.burger-btn:hover .burger-btn__bars::after {
+.nav .burger-btn:hover .nav .burger-btn__bars::after {
   width: 100%;
 }
-.burger-btn:hover .burger-btn__bars::before {
+.nav .burger-btn:hover .nav .burger-btn__bars::before {
   width: 100%;
+}
+.nav__items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  flex-direction: column;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(45deg, rgb(20, 105, 241), rgb(42, 10, 184));
+  transform: translateX(100%);
+  transition: transform 0.5s cubic-bezier(0.65, 0.05, 0.36, 1);
+  z-index: 10;
+}
+.nav__items--active {
+  transform: translateX(0);
+}
+.nav__item {
+  position: relative;
+  display: block;
+  margin: 0.5em 0;
+  padding: 0.5em 2em;
+  font-size: 2.8rem;
+  color: #fff;
+  text-decoration: none;
+}
+.nav__item::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleY(0);
+  transition: transform 0.3s;
+}
+.nav__item:hover::before {
+  transform: scaleY(1);
+}
+.nav__item--animation {
+  animation: navItemAnimation 1s both;
 }
 
 .header {
@@ -150,6 +193,14 @@ body {
   background-color: #eee;
 }
 
+@keyframes navItemAnimation {
+  from {
+    transform: translateX(200%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
 @media (min-width: 374px) {
   .header__title {
     font-size: 5rem;
