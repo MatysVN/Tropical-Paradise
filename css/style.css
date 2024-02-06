@@ -45,6 +45,32 @@
   transform-origin: left;
 }
 
+.section-heading {
+  position: relative;
+  margin-bottom: 2em;
+  font-size: 3rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-padding {
+  padding: 3em 2em;
+}
+
+@media (min-width: 768px) {
+  .section-heading {
+    font-size: 3.6rem;
+  }
+  .section-padding {
+    padding: 5em 2em;
+  }
+}
+@media (min-width: 992px) {
+  .section-heading {
+    font-size: 4.8rem;
+  }
+}
 *,
 *::before,
 *::after {
@@ -54,7 +80,6 @@
 }
 
 html {
-  background-color: #333;
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
@@ -62,6 +87,10 @@ html {
 body {
   font-family: "Open Sans", sans-serif;
   font-size: 1.6rem;
+}
+
+.section-heading {
+  color: #1755e7;
 }
 
 .nav .burger-btn {
@@ -201,6 +230,22 @@ body {
     transform: translateX(0%);
   }
 }
+.dreams__box {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+.dreams__img {
+  width: 100%;
+  margin-bottom: 1em;
+}
+.dreams__title {
+  margin-bottom: 0.5em;
+}
+.dreams__text {
+  font-size: 1.4rem;
+}
+
 @media (min-width: 374px) {
   .header__title {
     font-size: 5rem;
@@ -212,6 +257,28 @@ body {
     margin-top: 2em;
     padding: 0.8em 1.6em;
     font-size: 1.4rem;
+  }
+}
+@media (min-width: 576px) {
+  .dreams__box {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .dreams__box-text {
+    width: 55%;
+  }
+  .dreams__box-text--right {
+    text-align: right;
+  }
+  .dreams__box-img {
+    width: 40%;
+  }
+  .dreams__box-img--right {
+    order: 1;
+  }
+  .dreams__img {
+    margin-bottom: 0;
+    max-height: 300px;
   }
 }
 @media (min-width: 768px) {
@@ -229,10 +296,31 @@ body {
     height: 30px;
     width: 45%;
   }
+  .dreams__text {
+    font-size: 1.8rem;
+  }
 }
 @media (min-width: 992px) {
   .burger-btn {
     top: 40px;
     right: 40px;
+  }
+  .nav__item {
+    font-size: 4.8rem;
+  }
+  .dreams__box {
+    margin: 5em 0;
+  }
+  .dreams__box-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2.5em;
+  }
+  .dreams__title {
+    font-size: 3.6rem;
+  }
+  .dreams__text {
+    font-size: 2.2rem;
   }
 }/*# sourceMappingURL=style.css.map */
