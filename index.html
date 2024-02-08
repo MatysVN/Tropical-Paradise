@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Open+Sans:wght@300;700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
@@ -25,7 +26,7 @@
         <div class="nav__items">
             <a href="#islands" class="nav__item">Wyspy</a>
             <a href="#offers" class="nav__item">Oferty</a>
-            <a href="#revievs" class="nav__item">Opinie</a>
+            <a href="#reviews" class="nav__item">Opinie</a>
             <a href="#contact" class="nav__item">Kontakt</a>
         </div>
     </nav>
@@ -40,6 +41,7 @@
 
     <!-- MAIN -->
     <main class="main">
+        <!-- Dreams -->
         <section class="dreams section-padding section white-section">
             <div class="wrapper">
                 <h2 class="section-heading">Spełniaj Marzenia</h2>
@@ -71,7 +73,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Hero Img -->
         <section class="hero-img section">
             <div class="white-block white-block-left"></div>
             <div class="white-block white-block-right"></div>
@@ -80,7 +82,7 @@
             <p class="hero-img__text">Jedyne takie miejnsce na ziemi</p>
             <hr>
         </section>
-
+        <!-- Islands -->
         <section class="islands section-padding section white-section" id="islands">
             <div class="wrapper">
                 <h2 class="section-heading">Polecane Wyspy</h2>
@@ -152,7 +154,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Offers -->
         <section class="offers section-padding section" id="offers">
             <div class="white-block white-block-right"></div>
             <div class="white-block white-block-left"></div>
@@ -167,7 +169,8 @@
                             class="offers__option-img">
                         <div class="offers__option-info">
                             <h3 class="offers__option-heading">Wyjazd z dziećmi</h3>
-                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                                est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
                             <p class="offers__option-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <button class="offers__option-btn btn-special-animation">Wybierz</button>
                         </div>
@@ -177,7 +180,8 @@
                             class="offers__option-img offers__option-img--right">
                         <div class="offers__option-info">
                             <h3 class="offers__option-heading">Wypad z kumplami</h3>
-                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                                est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
                             <p class="offers__option-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <button class="offers__option-btn btn-special-animation">Wybierz</button>
                         </div>
@@ -187,7 +191,8 @@
                             class="offers__option-img">
                         <div class="offers__option-info">
                             <h3 class="offers__option-heading">Tylko we dwoje</h3>
-                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
+                            <p class="offers__option-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic
+                                est voluptas illo eaque temporibus voluptatem dolorem iusto at cupiditate eum?</p>
                             <p class="offers__option-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
                             <button class="offers__option-btn btn-special-animation">Wybierz</button>
                         </div>
@@ -197,9 +202,61 @@
 
             </div>
         </section>
+        <!-- reviews -->
+        <section class="reviews section-padding section white-section" id="reviews">
+            <h2 class="section-heading">Opinie</h2>
+            <div class="wrapper">
+                <div class="reviews__boxes">
 
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/attractive-1869761_640.jpg" alt="Kasia z Posądzy">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="p reviews__box-text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore pariatur, laboriosam
+                                neque soluta molestias asperiores exercitationem quod architecto distinctio excepturi?
+                            </p>
+                            <strong>Kasia z Posądzy</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/woman-1919143_640.jpg" alt="Basia z Gliwic">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="p reviews__box-text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore pariatur, laboriosam
+                                neque soluta molestias asperiores exercitationem quod architecto distinctio excepturi?
+                            </p>
+                            <strong>Basia z Gliwic</strong>
+                        </div>
+                    </div>
+                    <div class="reviews__box">
+                        <div class="reviews__box-img">
+                            <img src="./img/happy-1836445_640.jpg" alt="Franek z Warszawy">
+                        </div>
+                        <div class="reviews__box-info">
+                            <div class="reviews__box-quote"><i class="fas fa-quote-right"></i></div>
+                            <p class="p reviews__box-text">
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore pariatur, laboriosam
+                                neque soluta molestias asperiores exercitationem quod architecto distinctio excepturi?
+                            </p>
+                            <strong>Franek z Warszawy</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
     </main>
-
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
     <script src="./js/style.js"></script>
 </body>
